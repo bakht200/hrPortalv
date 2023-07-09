@@ -268,15 +268,13 @@ class _dashboardState extends State<dashboard> {
                                   backgroundImage: NetworkImage(
                                       "https://media.istockphoto.com/id/1415598585/vector/thin-outline-icon-sheet-of-paper-or-document-in-a-persons-hand-such-line-sign-as-request.jpg?s=612x612&w=0&k=20&c=OEg3W67Td0rqYuNBk_a0lTRWqFbCx2OG7xdaGw7VykE="),
                                 ),
-                                title: Text(
-                                  'Zain Tariq',
-                                ),
+                                title: Text(userSnapshot[index]["email"]),
                                 trailing: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     GestureDetector(
                                       onTap: () async {
-                                        print(userSnapshot[index]['id']);
+                                        // print(userSnapshot[index]['id']);
                                         await FirebaseFirestore.instance
                                             .collection('user_leave_request')
                                             .doc(userSnapshot[index]['id'])
